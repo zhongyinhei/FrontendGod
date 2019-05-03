@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>王尧的个人博客</title>
+    <style>
+        .header {
+            height: 156px;
+
+        }
+
+        .container-inner {
+            height: 106px;
+            background-color: #484847;
+            float: left;
+        }
+
+        .yusi-logo {
+            background-image: url('/static/images/timg.jpg');
+            width: 1200px;
+            float: left;
+            margin-left: 119px;
+            line-height: 106px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 40px;
+            font-family: 幼圆;
+            color: #ffffff;
+            margin-right: 85px
+        }
+
+        .navbar {
+            height: 50px;
+            background-color: #484847;
+            float: left;
+            margin-right: 85px;
+        }
+
+        .nav {
+            float: left;
+            list-style: none;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 51px;
+            width: 1200px;
+            margin: inherit;
+            margin-left: 79px
+        }
+
+        .nav li {
+            float: left;
+            color: white;
+            position: relative;
+        }
+
+        .nav li a {
+            margin: 20px
+        }
+
+        .nav li:hover {
+            background-color: #D23333;
+        }
+
+        .first_menu_item {
+            background-color: #D23333
+        }
+
+        .sub-menu {
+            background-color: #D23333;
+            position: absolute;
+            z-index: 99999;
+            width: 130px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
+
+        .sub-menu li {
+            width: 130px
+        }
+
+        .nav li:hover .sub-menu {
+            display: block;
+            background-color: #333333
+        }
+
+        .container {
+            height: 800px;
+            background-color: #484847
+        }
+
+        .speedbar {
+            width: 1200px;
+            height: 42px;
+            margin-left: 119px;
+            background-color: rgba(252, 252, 252, 0.97);
+            float: left;
+        }
+
+        .pull_middle {
+            line-height: 42px;
+            float: left;
+        }
+
+        .pull_middle a:hover {
+            color: #DC1087;
+            cursor: pointer
+        }
+
+        .pull_left {
+            width: 100px;
+            height: inherit;
+            line-height: 42px;
+            float: left;
+        }
+
+        .pull_right {
+            width: 100px;
+            height: inherit;
+            line-height: 42px;
+            float: left;
+        }
+
+        .fa_fa_power_off {
+            background-image: url("/static/tool/fa_fa_power_off.jpg");
+            height: 25px;
+            margin-top: 6.6px;
+            margin-left: 10px;
+            float: left;
+            width: 25px;
+        }
+
+        .fa_fa_power_on {
+            background-image: url("/static/tool/fa_fa_power_on.jpg");
+            height: 25px;
+            margin-top: 8px;
+            float: left;
+            margin-left: 10px;
+            width: 25px;
+        }
+
+        .pull_left a:hover {
+            color: #DC1087;
+            cursor: pointer
+        }
+
+        .pull_right a:hover {
+            color: #DC1087;
+            cursor: pointer
+        }
+
+        .hot-posts {
+            float: left;
+            margin-left: 119px;;
+            background-color: #ffffff;
+            height: auto;
+            width: 863px;
+            margin-top: 13px;
+        }
+
+        .title {
+            color: #DC1087;
+            font-weight: 600;
+            line-height: 50px;
+            margin: 0;
+            margin-left: 20px;
+            margin-right: 28px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid #333333;
+        }
+
+        .layui-table {
+            width: 815px;
+            height: 500px;
+            margin: 20px;
+            padding: 0
+        }
+
+        .layui-table tbody tr:hover, .layui-table thead tr, .layui-table-total tr, .layui-table[lay-even] tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        td {
+            white-space: nowrap;
+            font-weight: 300;
+            font-size: 20px
+        }
+
+        .hot-posts-1 {
+            background-color: #fd8c84;
+            text-align: center
+        }
+
+        .hot-posts-2 {
+            background-color: #6fc299;
+            text-align: center
+        }
+
+        .hot-posts-3 {
+            background-color: #81c1f2;
+            text-align: center
+        }
+
+        .hot-posts-4 {
+            background-color: #FFFF00;
+            text-align: center
+        }
+
+        .hot-posts-5 {
+            background-color: #33bbba;
+            text-align: center
+        }
+
+        .hot-posts-6 {
+            background-color: #f88a2a;
+            text-align: center
+        }
+
+        .hot-posts-7 {
+            background-color: springgreen;
+            text-align: center
+        }
+
+        .hot-posts-8 {
+            background-color: thistle;
+            text-align: center
+        }
+
+        .hot-posts-9 {
+            background-color: plum;
+            text-align: center
+        }
+
+        .hot-posts-10 {
+            background-color: #9b9b9b;
+            text-align: center
+        }
+    </style>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="container-inner">
+        <div class="yusi-logo">王奕君的博客</div>
+    </div>
+    <div class="navbar">
+        <ul class="nav">
+            <li class="first_menu_item"><a>首页</a></li>
+            <li>
+                <a>生活笔记</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a>个人随笔</a>
+                    </li>
+                    <li>
+                        <a>个人日记</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a>技术杂谈</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a>Python</a>
+                    </li>
+                    <li>
+                        <a>JavaScript</a>
+                    </li>
+                    <li>
+                        <a>Other</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a>福利专区</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a>亚洲色情</a>
+                    </li>
+                    <li>
+                        <a>有声小说</a>
+                    </li>
+                    <li>
+                        <a>丝袜诱惑</a>
+                    </li>
+                    <li>
+                        <a>校园偷拍</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a>关于自己</a></li>
+            <li><a>给我留言</a></li>
+            <li><a>赞助作者</a></li>
+            <li><a>技术交流</a></li>
+            <li><a>提问交流</a></li>
+            <li><a>项目合作</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a>web开发</a>
+                    </li>
+                    <li>
+                        <a>爬虫逆向</a>
+                    </li>
+                    <li>
+                        <a>量化交易</a>
+                    </li>
+                    <li>
+                        <a>后端开发</a>
+                    </li>
+                    <li>
+                        <a>数据分析</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+<section class="container">
+    <div class="speedbar">
+        <div class="pull_middle">
+            <a style="margin-left: 20px;color: #484847;font-weight: 600" onclick="user()" id="nickname"></a>
+            <a style="color: #484847;font-weight: 600" onclick="login_out()">[退出]</a>
+        </div>
+        <div class="pull_left">
+            <span class="fa_fa_power_off"></span>
+            <a style="margin-left: 10px;color: #484847;font-weight: 600" onclick="login()">登录</a>
+        </div>
+        <div class="pull_right">
+            <span class="fa_fa_power_on"></span>
+            <a style="margin-left: 10px;color: #484847;font-weight: 600" onclick="register()">注册</a>
+        </div>
+    </div>
+    <div class="hot-posts">
+        <h2 class="title">热门排行</h2>
+        <table class="layui-table" rules="none">
+            <colgroup>
+                <col width="20">
+                <col width="150">
+                <col width="200">
+            </colgroup>
+            <tbody>
+            {% for i in contents %}
+            <tr>
+                {{i|safe}}
+            <tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="jq22">
+        <div id="calendar"></div>
+    </div>
+</section>
+<script>
+    var nickname = {{nickname | safe}}
+    console.log(nickname);
+    if (nickname) {
+        $('.pull_left').remove();
+        $('.pull_right').remove();
+        nickname = nickname.replace("\"", "");
+        console.log(nickname);
+        $('#nickname').get(0).innerHTML = nickname;}
+    else
+        {
+            $('.pull_middle').remove()
+        }
+        function mOver(obj) {
+            obj.style.cursor = "pointer";
+            obj.style.color = '#DC1087'
+        }
+
+        function mOut(obj) {
+            obj.style.color = '#00a67c'
+        }
+
+        function register() {
+            window.open('../sign/sign_up', '_self'); //覆盖当前页面打开
+        }
+
+        function login() {
+            window.open('../sign/sign_in', '_self'); //覆盖当前页面打开
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="/static/css/sign.css">
+    <link rel="stylesheet" href="/static/css/new.css">
+
+    <style>
+        .sign {
+            width: 1420px;
+            height: 500px;
+            background-color: #484847;
+        }
+
+        .titlex {
+            float: left;
+            width: 600px;
+            height: 100px;;
+            margin: 20px;
+            margin-left: -30px
+        }
+
+        .titlex_span {
+            line-height: 100px;
+            font-size: 50px;
+            letter-spacing: 10px;
+            font-family: 时尚中黑简体;
+            color: #ffffff;
+        }
+
+        .main {
+            float: left;
+            height: 380px;
+            width: 402px;
+            margin-top: 60px;
+            margin-left: -40px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body class="no-padding reader-black-font">
+<div class="sign">
+    <div class="titlex">
+        <center class="titlex_span">王奕君的博客</center>
+    </div>
+    <div class="main">
+
+
+        <h4 class="title">
+            <div class="normal-title">
+                <a class="active">登录</a>
+                <b>·</b>
+                <a id="js-sign-up-btn" class="" href="./sign_up">注册</a>
+            </div>
+        </h4>
+        <div class="js-sign-in-container">
+            <form id="new_session" action="/sessions" accept-charset="UTF-8" method="post"><input name="utf8"
+                                                                                                  type="hidden"
+                                                                                                  value="✓"><input
+                    type="hidden" name="authenticity_token"
+                    value="qDtN5UGRATT2tPcd+uOrG8m0KdsqXLvJmH/pfuTlk1Lv/1ZjI7tV8wumHBm+pPvL232IZNKXAp197RUjcBNI8g==">
+
+                <!-- 正常登录登录名输入框 -->
+                <div class="input-prepend restyle js-normal">
+                    <input placeholder="你的昵称" type="text" name="session[email_or_mobile_number]"
+                           id="session_email_or_mobile_number">
+                    <i class="iconfont ic-user"></i>
+                </div>
+
+                <!-- 海外登录登录名输入框 -->
+
+                <div class="input-prepend">
+                    <input placeholder="密码" type="password" name="session[password]" id="session_password">
+                    <i class="iconfont ic-password"></i>
+                </div>
+                <input value="false" type="hidden" name="session[oversea]" id="session_oversea">
+                <div>
+                    <input id="sign-in-form-captcha-challenge" name="captcha[validation][challenge]" autocomplete="off"
+                           type="hidden">
+                    <input id="sign-in-form-captcha-gt" name="captcha[validation][gt]" autocomplete="off" type="hidden">
+                    <input id="sign-in-form-captcha-validate" name="captcha[validation][validate]" autocomplete="off"
+                           type="hidden">
+                    <input id="sign-in-form-captcha-seccode" name="captcha[validation][seccode]" autocomplete="off"
+                           type="hidden">
+                </div>
+                <div class="remember-btn">
+                    <input type="checkbox" value="true" checked="checked" name="session[remember_me]"
+                           id="session_remember_me"><span>记住我</span>
+                </div>
+                <button class="sign-in-button" id="sign-in-form-submit-btn" type="button">
+                    <span id="sign-in-loading"></span>
+                    登录
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function check() {
+        var val = document.getElementById("user_password").value;
+        if (val == "") {
+            alert("值不能为空");
+            return false;
+        }
+        var val = document.getElementById("user_nickname").value;
+
+        return true;
+
+    }
+</script>
+</html>
